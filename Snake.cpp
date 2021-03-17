@@ -131,6 +131,15 @@ public:
 		fruit.SetPoint(rand() % MAXFRAMESIZEX, rand() % MAXFRAMESIZEY);
 	}
 
+	~Snake()
+	{
+		for (int i = 0; i < size; i++)
+		{
+			delete cell[i];
+		}
+		std::cout << "Object deleted" << std::endl;
+	}
+
 	void AddCell(int _x, int _y)
 	{
 		cell[size++] = new Point(_x, _y);
@@ -177,6 +186,7 @@ public:
 		if (selfCollision())
 		{
 			std::cout << "You died...";
+			Snake::~Snake();
 			exit(0);
 		}
 
