@@ -220,7 +220,7 @@ int main()
 {
 	srand((unsigned)time(NULL));
 	Snake snake = Snake();
-	char op = 'l';
+	char op = 't';
 	do
 	{
 		if (_kbhit())//если нажата клавиша
